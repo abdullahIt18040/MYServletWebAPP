@@ -2,7 +2,10 @@
  "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
-<web-app>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         id="WebApp_ID" version="3.0">
   <display-name>Archetype Created Web Application</display-name>
 
   <servlet>
@@ -15,6 +18,32 @@
     <url-pattern>/myservlet</url-pattern>
   </servlet-mapping>
 
+
+  <servlet>
+    <servlet-name>studentdelete</servlet-name>
+    <servlet-class>DeleteServlet</servlet-class>
+  </servlet>
+
+
+
+  <servlet-mapping>
+    <servlet-name>studentdelete</servlet-name>
+    <url-pattern>/studentdelete</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet>
+    <servlet-name>editstudent</servlet-name>
+    <servlet-class>EditServlet</servlet-class>
+  </servlet>
+
+
+  <servlet-mapping>
+    <servlet-name>editstudent</servlet-name>
+    <url-pattern>/editstudent</url-pattern>
+  </servlet-mapping>
+
+
   <servlet>
     <servlet-name>allstudent</servlet-name>
     <servlet-class>AllStudent</servlet-class>
@@ -24,7 +53,20 @@
     <servlet-name>allstudent</servlet-name>
     <url-pattern>/allstudent</url-pattern>
   </servlet-mapping>
-  
+
+
+
+  <servlet>
+    <servlet-name>updatestudent</servlet-name>
+    <servlet-class>UpdateServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>updatestudent</servlet-name>
+    <url-pattern>/updatestudent</url-pattern>
+  </servlet-mapping>
+
+
+
   
   <context-param>
     <param-name>jdbcURl</param-name>

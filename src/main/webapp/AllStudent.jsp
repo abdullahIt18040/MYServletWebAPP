@@ -33,103 +33,101 @@
                     <div class="card-title"> All Student list  </div>
                 </div>
                 <div class="card-body">
-                    <%ArrayList<Student> studentList =
-                            (ArrayList<Student>)request.getAttribute("studentList");
-                        System.out.println(studentList);
-                    %>
 
-                    <c:out value="${studentList}"/>
 
-                        <table class="table">
-                            <thead>
+
+
+
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">Full Name</th>
+                            <th scope="col">ID </th>
+                            <th scope="col">Email</th>
+                            <th scope="col">password </th>
+                            <th scope="col">depertment </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+
+
+                        <c:forEach    var="student" items="${studentList}" >
+
+
                             <tr>
-                                <th scope="col">Full Name</th>
-                                <th scope="col">ID </th>
-                                <th scope="col">Email</th>
-                                <th scope="col">password </th>
-                                <th scope="col">depertment </th>
+
+                                <td>   ${student.name} </td>
+                                <td>   <c:out value= "${student.ID}" /> </td>
+                                <td>   <c:out value= "${student.email}"/> </td>
+                                <td>   <c:out value= "${student.password}"/> </td>
+                                <td>   <c:out value="${student.dept}"/> </td>
+
+
+
                             </tr>
-                            </thead>
-                            <tbody>
-
-
-
-                            <c:forEach items="${studentList}" var="student">
-
-
-                                <tr>
-
-                                    <td>   ${student.getName()} </td>
-                                    <td>   <c:out value="${student.ID}"/> </td>
-                                    <td>   <c:out value="${student.email}"/> </td>
-                                    <td>   <c:out value="${student.password}"/> </td>
-                                    <td>   <c:out value="${student.dept}"/> </td>
-
-
-
-                                </tr>
-                            </c:forEach>
+                        </c:forEach>
 
 
 
 
 
 
-                            </tbody>
-                        </table>
+                        </tbody>
+                    </table>
 
 
-<%--                        <div class="mb-3">--%>
-<%--                            <label for="name" class="form-label">Full  Name </label>--%>
-<%--                            <input type="text" class="form-control" id="name" name="name"--%>
-<%--                                   aria-describedby="namelHelp">--%>
-<%--                            <div id="namelHelp" class="form-text">Enter your Full Name .--%>
-<%--                            </div>--%>
-<%--                        </div>--%>
+                    <%--                        <div class="mb-3">--%>
+                    <%--                            <label for="name" class="form-label">Full  Name </label>--%>
+                    <%--                            <input type="text" class="form-control" id="name" name="name"--%>
+                    <%--                                   aria-describedby="namelHelp">--%>
+                    <%--                            <div id="namelHelp" class="form-text">Enter your Full Name .--%>
+                    <%--                            </div>--%>
+                    <%--                        </div>--%>
 
-<%--                        <div class="mb-3">--%>
-<%--                            <label for="ID" class="form-label">Enter Your ID  </label>--%>
-<%--                            <input type="text" class="form-control" id="ID" name="ID"--%>
-<%--                                   aria-describedby="IDHelp">--%>
-<%--                            <div id="IDHelp" class="form-text">Enter your ID  .--%>
-<%--                            </div>--%>
-<%--                        </div>--%>
-
-
-
-<%--                        <div class="mb-3">--%>
-<%--                            <label for="email" class="form-label">Email address</label>--%>
-<%--                            <input type="email" class="form-control" id="email" name="email"--%>
-<%--                                   aria-describedby="emailHelp">--%>
-<%--                            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.--%>
-<%--                            </div>--%>
-<%--                        </div>--%>
+                    <%--                        <div class="mb-3">--%>
+                    <%--                            <label for="ID" class="form-label">Enter Your ID  </label>--%>
+                    <%--                            <input type="text" class="form-control" id="ID" name="ID"--%>
+                    <%--                                   aria-describedby="IDHelp">--%>
+                    <%--                            <div id="IDHelp" class="form-text">Enter your ID  .--%>
+                    <%--                            </div>--%>
+                    <%--                        </div>--%>
 
 
-<%--                        <div class="mb-3">--%>
-<%--                            <label for="password" class="form-label">Enter your Password </label>--%>
-<%--                            <input type="text" class="form-control" id="password" name="password"--%>
-<%--                                   aria-describedby="passwordHelp">--%>
-<%--                            <div id="passwordlHelp" class="form-text">We'll never share your password  with anyone else.--%>
-<%--                            </div>--%>
-<%--                        </div>--%>
 
-<%--                        <div class="mb-3">--%>
-<%--                            <label for="dept" class="form-label">Enter your Depertment  </label>--%>
-<%--                            <input type="text" class="form-control" id="dept" name="dept"--%>
-<%--                                   aria-describedby="deptHelp">--%>
-<%--                            <div id="deptlHelp" class="form-text">Enter your Depertment Name--%>
-<%--                            </div>--%>
-<%--                        </div>--%>
+                    <%--                        <div class="mb-3">--%>
+                    <%--                            <label for="email" class="form-label">Email address</label>--%>
+                    <%--                            <input type="email" class="form-control" id="email" name="email"--%>
+                    <%--                                   aria-describedby="emailHelp">--%>
+                    <%--                            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.--%>
+                    <%--                            </div>--%>
+                    <%--                        </div>--%>
 
 
-<%--                        <div class="mb-3 form-check">--%>
-<%--                            <input type="checkbox" class="form-check-input" id="exampleCheck1">--%>
-<%--                            <label class="form-check-label" for="exampleCheck1">Check me out</label>--%>
-<%--                        </div>--%>
-<%--                        <button type="submit" class="btn btn-primary">Submit</button>--%>
-<%--                        <button type="reset" class="btn btn-primary">Reset</button>--%>
-<%--                        <a class="btn btn-danger" href="#" role="button">Cancle </a>--%>
+                    <%--                        <div class="mb-3">--%>
+                    <%--                            <label for="password" class="form-label">Enter your Password </label>--%>
+                    <%--                            <input type="text" class="form-control" id="password" name="password"--%>
+                    <%--                                   aria-describedby="passwordHelp">--%>
+                    <%--                            <div id="passwordlHelp" class="form-text">We'll never share your password  with anyone else.--%>
+                    <%--                            </div>--%>
+                    <%--                        </div>--%>
+
+                    <%--                        <div class="mb-3">--%>
+                    <%--                            <label for="dept" class="form-label">Enter your Depertment  </label>--%>
+                    <%--                            <input type="text" class="form-control" id="dept" name="dept"--%>
+                    <%--                                   aria-describedby="deptHelp">--%>
+                    <%--                            <div id="deptlHelp" class="form-text">Enter your Depertment Name--%>
+                    <%--                            </div>--%>
+                    <%--                        </div>--%>
+
+
+                    <%--                        <div class="mb-3 form-check">--%>
+                    <%--                            <input type="checkbox" class="form-check-input" id="exampleCheck1">--%>
+                    <%--                            <label class="form-check-label" for="exampleCheck1">Check me out</label>--%>
+                    <%--                        </div>--%>
+                    <%--                        <button type="submit" class="btn btn-primary">Submit</button>--%>
+                    <%--                        <button type="reset" class="btn btn-primary">Reset</button>--%>
+                    <%--                        <a class="btn btn-danger" href="#" role="button">Cancle </a>--%>
 
 
 
