@@ -1,3 +1,9 @@
+
+
+<%@page import="mapper.Student"%>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,65 +25,21 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <div class="card-title"> Add student </div>
+                    <div class="card-title"> Edit student </div>
                 </div>
                 <div class="card-body">
 
-                    <form>
-
-
-                        <div class="mb-3">
-                            <label for="name" class="form-label">Full  Name </label>
-                            <input type="text" class="form-control" id="name" name="name"
-                                   aria-describedby="namelHelp">
-                            <div id="namelHelp" class="form-text">Enter your Full Name .
-                            </div>
-                        </div>
+                    <form action="./editstudent" method="post">
 
                         <div class="mb-3">
-                            <label for="ID" class="form-label">Enter Your ID  </label>
-                            <input type="text" class="form-control" id="ID" name="ID"
-                                   aria-describedby="IDHelp">
-                            <div id="IDHelp" class="form-text">Enter your ID  .
-                            </div>
-                        </div>
-
-
-
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email address</label>
-                            <input type="email" class="form-control" id="email" name="email"
-                                   aria-describedby="emailHelp">
-                            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.
-                            </div>
-                        </div>
-
-
-                        <div class="mb-3">
-                            <label for="password" class="form-label">Enter your Password </label>
-                            <input type="text" class="form-control" id="password" name="password"
+                            <label for="dept" class="form-label">Enter your dept name  </label>
+                            <input type="text" class="form-control" id="dept" name="dept"
                                    aria-describedby="passwordHelp">
                             <div id="passwordlHelp" class="form-text">We'll never share your password  with anyone else.
                             </div>
                         </div>
 
-                        <div class="mb-3">
-                            <label for="dept" class="form-label">Enter your Depertment  </label>
-                            <input type="text" class="form-control" id="dept" name="dept"
-                                   aria-describedby="deptHelp">
-                            <div id="deptlHelp" class="form-text">Enter your Depertment Name
-                            </div>
-                        </div>
-
-
-                        <div class="mb-3 form-check">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                        </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
-                        <button type="reset" class="btn btn-primary">Reset</button>
-                        <a class="btn btn-danger" href="#" role="button">Cancle </a>
-
 
                     </form>
 

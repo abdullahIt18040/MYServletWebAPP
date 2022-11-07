@@ -1,5 +1,6 @@
 import mapper.Student;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -56,7 +57,8 @@ public class AddStudent extends HttpServlet {
 
             if(isinsert)
             {
-                System.out.println(" student inserted success fully .........");
+                RequestDispatcher dispatcher=req.getRequestDispatcher("successful.jsp");
+                dispatcher.forward(req,resp);
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
